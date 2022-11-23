@@ -58,6 +58,47 @@ function convertToDecimal(numero){
     return resultFinal;
 }
 
+
+
+function convertToDecimal2(numero,base){
+
+    var arrNumero = numero.split("");
+    
+    var posicao = arrNumero.length -1;
+    var resultDeCadaAlgarimo = 0;
+    var resultFinal = 0;
+    var numeroNovo = 0;
+
+    for(i=0;i<arrNumero.length;i++){
+        //console.log(arrNumero[i] + "=" + returnDecimalByHexa(arrNumero[i]));
+        //(a*b elevado a posiçao)
+
+        // if(isNaN(arrNumero[i]))
+        //     numeroNovo = returnDecimalByHexa(arrNumero[i])
+        // else
+        //     numeroNovo = arrNumero[i];
+
+        //numeroNovo = (isNaN(arrNumero[i]) ? returnDecimalByHexa(arrNumero[i]) : arrNumero[i]);
+
+        resultDeCadaAlgarimo = ((isNaN(arrNumero[i]) ? returnDecimalByHexa(arrNumero[i]) : arrNumero[i]) * (base**posicao));
+        resultFinal = resultFinal + resultDeCadaAlgarimo;
+        posicao--;
+    }
+    return resultFinal;
+}
+
+function returnDecimalByHexa(letra){
+    switch (letra) {
+        case "A":
+            return 10;
+        case "B":
+            return 11;
+    
+        default:
+            break;
+    }
+}
+
 // 0
 // 0<4
 // posicao 0 = 1
