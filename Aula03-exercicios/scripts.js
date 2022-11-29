@@ -99,6 +99,8 @@ function returnDecimalByHexa(letra){
     }
 }
 
+function conver
+
 // 0
 // 0<4
 // posicao 0 = 1
